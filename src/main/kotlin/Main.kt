@@ -16,7 +16,7 @@ fun start(parking: Parking){
     while (true) {
         val scan = Scanner(System.`in`)
 
-        println("--- Choose a option: ---")
+        println("--- MENU: Choose a option ---")
         for (option in Options.values()) {
             println("${option.action} -> ${option.discription}")
         }
@@ -39,8 +39,11 @@ fun start(parking: Parking){
             Options.CHECK_OUT.action -> {
                 checkOut(parking)
             }
+            Options.REPORT_F.action -> {
+                generateFinancialReport(parking)
+            }
             else -> {
-                error("Invalid option")
+                println("Invalid option")
             }
         }
     }
@@ -123,6 +126,15 @@ fun checkOut(parking: Parking){
         start(parking)
     }
 
+}
+
+fun generateFinancialReport(parking: Parking){
+    val report = parking.financialReport()
+    lineDivisor()
+    println("FINANCIAL REPORT")
+    println(report)
+    lineDivisor()
+    start(parking)
 }
 
 fun lineDivisor() {
