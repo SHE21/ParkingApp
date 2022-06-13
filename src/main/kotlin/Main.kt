@@ -36,6 +36,9 @@ fun start(parking: Parking){
             Options.SHOW_L.action -> {
                 showListOfVehicles(parking)
             }
+            Options.CHECK_OUT.action -> {
+                checkOut(parking)
+            }
             else -> {
                 error("Invalid option")
             }
@@ -103,6 +106,23 @@ fun createVehicleByPrompt(parking: Parking) {
             println("Type of vehicle is invalid. Choose a valid code of vehicle!")
         }
     }
+}
+
+fun checkOut(parking: Parking){
+    val scan = Scanner(System.`in`)
+    println("Enter with license plate:")
+    val plate = scan.next()
+
+    val vehicle = parking.getVehicleByPlate(plate)
+
+    if (vehicle != null){
+        parking.checkOutVehicle(vehicle)
+
+    }else{
+        println("We can not checkout this vehicle")
+        start(parking)
+    }
+
 }
 
 fun lineDivisor() {
