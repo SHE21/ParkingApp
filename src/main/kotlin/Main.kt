@@ -11,7 +11,7 @@ fun main() {
 
 }
 
-fun start(parking: Parking){
+fun start(parking: Parking) {
 
     while (true) {
         val scan = Scanner(System.`in`)
@@ -69,7 +69,7 @@ fun createVehicleByPrompt(parking: Parking) {
     val listOfTypes = arrayListOf<TypeVehicle>()
 
     val scan = Scanner(System.`in`)
-    println("Please enter with a plate number of car:")
+    println("Please enter with a plate number of vehicle:")
 
     val plateNumber = scan.next().uppercase()
     println("The plate number is: $plateNumber")
@@ -98,7 +98,7 @@ fun createVehicleByPrompt(parking: Parking) {
             if (parking.addVehicle(vehicle)) {
                 break
 
-            }else{
+            } else {
                 start(parking)
             }
 
@@ -111,24 +111,24 @@ fun createVehicleByPrompt(parking: Parking) {
     }
 }
 
-fun checkOut(parking: Parking){
+fun checkOut(parking: Parking) {
     val scan = Scanner(System.`in`)
     println("Enter with license plate:")
     val plate = scan.next()
 
     val vehicle = parking.getVehicleByPlate(plate)
 
-    if (vehicle != null){
+    if (vehicle != null) {
         parking.checkOutVehicle(vehicle)
 
-    }else{
+    } else {
         println("We can not checkout this vehicle")
         start(parking)
     }
 
 }
 
-fun generateFinancialReport(parking: Parking){
+fun generateFinancialReport(parking: Parking) {
     val report = parking.financialReport()
     lineDivisor()
     println("FINANCIAL REPORT")

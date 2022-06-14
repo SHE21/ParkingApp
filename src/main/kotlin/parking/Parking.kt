@@ -9,11 +9,7 @@ data class Parking(var vehicles: MutableSet<Vehicle>) {
     private var report = Pair(0, 0)
 
     fun addVehicle(vehicle: Vehicle): Boolean {
-        if (!this.isForbidden(vehicle)) {
-            error("This vehicle type is not allowed to add in the com.meli.parking")
-            return false
-        }
-        if (checkVehicle(vehicle)) {
+        if (vehicleAlreadyParked(vehicle)) {
             error("Sorry, the vehicle already is in the parking!")
             return false
         }
@@ -61,26 +57,6 @@ data class Parking(var vehicles: MutableSet<Vehicle>) {
         }
     }
 
-    private fun isForbidden(vehicle: Vehicle): Boolean {
-        when (vehicle.type.type) {
-            "moto" -> {
-                return true
-            }
-            "minibus" -> {
-                return true
-            }
-            "bus" -> {
-                return true
-            }
-            "car" -> {
-                return true
-            }
-            else -> {
-                return false
-            }
-        }
-    }
-
     fun listVehicles(): ArrayList<String> {
         val vehicleList = arrayListOf<String>()
 
@@ -91,10 +67,14 @@ data class Parking(var vehicles: MutableSet<Vehicle>) {
     }
 
     fun financialReport(): String {
-        return "${report.first} vehicles have checked out and have earnings of ${report.second}\n"
+        return "${report.first} vehicles have checked out and have earnings of $${report.second}\n"
     }
 
-    private fun checkVehicle(vehicle: Vehicle): Boolean {
+    /**
+     * Checks if the [vehicle] is already parked to not allow two vehicles with the same license plate to be parked
+     * @return true if the [vehicle] already parked
+     */
+    private fun vehicleAlreadyParked(vehicle: Vehicle): Boolean {
         return this.vehicles.contains(vehicle)
     }
 
@@ -106,7 +86,7 @@ data class Parking(var vehicles: MutableSet<Vehicle>) {
         println("######## $msn ########")
     }
 
-    private fun error(msn: String){
+    private fun error(msn: String) {
         println("######## $msn ########")
     }
 }
