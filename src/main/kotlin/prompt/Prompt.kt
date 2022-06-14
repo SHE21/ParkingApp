@@ -14,7 +14,7 @@ fun start(parking: Parking){
 
         println("--- MENU: Choose a option ---")
         for (option in Options.values()) {
-            println("${option.action} -> ${option.discription}")
+            println("${option.action} -> ${option.description}")
         }
 
         lineDivisor() // line divisor
@@ -55,12 +55,14 @@ fun createVehiclesDynamically(parking: Parking, numberOfVehicles: Int) {
     }
 }
 
+//method show a list of vehicles of the parking
 fun showListOfVehicles(parking: Parking) {
     for (vehicle in parking.listVehicles()) {
         println(vehicle)
     }
 }
 
+//method creates (add) a vehicle with command line
 fun createVehicleByPrompt(parking: Parking) {
     val listOfTypes = arrayListOf<TypeVehicle>()
 
