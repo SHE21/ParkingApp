@@ -18,7 +18,18 @@
 <p><i>public data class</i></p>
 <p>The <i>Parking</i> class contains all methods and properties that allow to instantiate a parking and its functionalities. </p>
 <h5>properties</h5>
+
 <code>public var vehicles: MutableSet&#x0003C;Vehicle&#x0003E;</code>
 <p>Variable stores a list of vehicles. Must initialize on constructor of class <code>Parking(vehicles : MutableSet&#x0003C;Vehicle&#x0003E;)</code></p>
+
 <code>private var report: Pair(Int, Int)</code>
 <p>That variable is initialized with values integer numbers. it is used to store data from financial report.</p>
+
+<h5>methods</h5>
+<code>addVehicle(vehicle: Vehicle): Boolean</code>
+<p>That method allows to add a vehicle to the parking lot. The input parameter is a variable type of <code>Vehicle</code>. If the operation was a success its return is a boolean type, in that case, it returns true.</p>
+
+<code>checkOutVehicle(vehicle: Vehicle): Vehicle?</code>
+<p>That method checkout a vehicle from the parking lot (Can indicate the vehicle in the input parameter). When this method is called, other methods are also called.
+That is necessary because a series of operations are also carried, such as remove a vehicle, calculating fee and discount, verifying if the vehicle exists.
+The method returns a vehicle type value if the operations were successful, otherwise it returns null.</p>
