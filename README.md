@@ -39,6 +39,22 @@ That method allows to add a vehicle to the parking lot. The input parameter is a
 
 That method checkout a vehicle from the parking lot (Can indicate the vehicle in the input parameter). When this method is called, other methods are also called. That is necessary because a series of operations are also carried, such as remove a vehicle, calculating fee and discount, verifying if the vehicle exists. The method returns a vehicle type value if the operations were successful, otherwise it returns null.
 
+`listVehicles(): ArrayList`
+
+That method get a list of vehicles, but it returns only the license plate in string type.
+
+`financialReport(): String`
+
+That method returns the financial report. The financial report shows the total number of vehicles removed from the parking lot and the total earnings.
+
+`vehicleAlreadyParked(vehicle: Vehicle): Boolean` _private method_
+
+Allows to check if the vehicle is in the parking lot.
+
+`getVehicleByPlate(plate: String): Vehicle?`
+
+Get a vehicle by license plate, if the vehicle was found the method will return true.
+
 ![AlkeParkingDiagramClass](AlkeParkingDiagramClass.png)
 
 ## Functionalities
