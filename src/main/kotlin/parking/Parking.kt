@@ -3,6 +3,7 @@ package parking
 import util.Parameters
 import util.getTimeInArrayFormat
 import util.getTimeInMinutesFormat
+import vehicle.TypeVehicle
 import vehicle.Vehicle
 
 data class Parking(var vehicles: MutableSet<Vehicle>) {
@@ -61,24 +62,9 @@ data class Parking(var vehicles: MutableSet<Vehicle>) {
         }
     }
 
-    private fun isForbidden(vehicle: Vehicle): Boolean {
-        when (vehicle.type.type) {
-            "moto" -> {
-                return true
-            }
-            "minibus" -> {
-                return true
-            }
-            "bus" -> {
-                return true
-            }
-            "car" -> {
-                return true
-            }
-            else -> {
-                return false
-            }
-        }
+    private fun isForbidden(vehicle: Vehicle): Boolean{
+        val typeList = TypeVehicle.values()
+        return typeList.contains(vehicle.type)
     }
 
     fun listVehicles(): ArrayList<String> {

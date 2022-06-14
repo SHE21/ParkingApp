@@ -12,8 +12,6 @@ data class Vehicle(
 
     val parkedTime: Long
         get() = (getInstance().timeInMillis - checkIn.timeInMillis) / MILLISECOND
-    var ourTimeIn: String = ""
-    var outTimeOut: String = ""
 
     //Check if a vehicle is equals another vehicle
     override fun equals(other: Any?): Boolean {
