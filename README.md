@@ -33,3 +33,20 @@
 <p>That method checkout a vehicle from the parking lot (Can indicate the vehicle in the input parameter). When this method is called, other methods are also called.
 That is necessary because a series of operations are also carried, such as remove a vehicle, calculating fee and discount, verifying if the vehicle exists.
 The method returns a vehicle type value if the operations were successful, otherwise it returns null.</p>
+
+<code>isForbidden(vehicle: Vehicle): Boolean</code>
+<i>private method</i>
+<p>That method allows to check if a type of vehicle is valid. The types of vehicles allowed are in the enum class <code>TypeVehicle</code>.</p>
+
+<code>listVehicles(): ArrayList<String></code>
+<p>That method get a list of vehicles, but it returns only the license plate in string type.</p>
+
+<code>financialReport(): String</code>
+<p>That method returns the financial report. The financial report shows the total number of vehicles removed from the parking lot and the total earnings.</p>
+
+<code>checkVehicle(vehicle: Vehicle): Boolean</code>
+<i>private method</i>
+<p>Allows to check if the vehicle is in the parking lot.</p>
+
+<code>getVehicleByPlate(plate: String): Vehicle?</code>
+<p>Get a vehicle by license plate, if the vehicle was found the method will return true.</p>
