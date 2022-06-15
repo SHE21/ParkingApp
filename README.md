@@ -67,6 +67,9 @@ Allows to check if the vehicle is in the parking lot.
 
 Get a vehicle by license plate, if the vehicle was found the method will return true.
 
+`val parkedTime: Long()`
+receives the vehicle's check-in and check-out time in milliseconds and returns, in minutes, the calculation of how long the vehicle was parked
+
 ## Usage
 
 First of all you must instantiate the `Parking` class and pass an empty list type `MutableSet<Vehicle>` through its constructor. Look at the example:
