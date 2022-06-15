@@ -55,6 +55,37 @@ Allows to check if the vehicle is in the parking lot.
 
 Get a vehicle by license plate, if the vehicle was found the method will return true.
 
+#### Usage
+
+First of all you must instantiate the `Parking` class and pass an empty list type `MutableSet<Vehicle>` through its constructor. Look at the example:
+
+1 `1 val vehicles = MutableSet<Vehicle>`
+
+2 `val parking = Parking(vehicles)`
+
+Now, you have an empty Parking lot,  and you can add vehicles. But for that you must instantiate `Vahicle` class like that:
+
+3 `val vehicle = Vehicle("GOTS12", TypeVehicle.CAR, "DISC12)`
+
+The three arguments passed in the constructor of `Vehicle`class are: a string that represents a license plate of vehicle, the type of vehicles from `TypeVehicle`class and a discount car.
+
+Now you can call the method `addVehicle()` from the `Parking` class and pass the variable `vehicle` through the constructor:
+
+4 `parking.addVehicle(vehicle)`
+
+You have the first vehicle in the parking lot and can add others. In the class `Parameters` you can define the limit maximum of vehicles allowed.
+
+The method `checkOutVehicle()`allows you checkout a vehicle from the parking lot. You must pass a variable of type `Vehicle` as a parameter:
+
+5 `parking.checkOutVehicle(vehicle)`
+
+That method will return a value boolean, it means that value was true the operation was successful.
+
+You can obtain the operations report of the parking calling the method `financialReport()`:
+
+6 `parking.financialReport()`
+
+
 ![AlkeParkingDiagramClass](AlkeParkingDiagramClass.png)
 
 ## Functionalities
