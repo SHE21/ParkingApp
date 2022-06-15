@@ -2,7 +2,7 @@
 AlkeParking is a parking lot that allows four types of vehicles (car, motorcycle, minibus and bus)
 and has a maximum capacity of up to 20 parked vehicles.
 
-##Project Structure
+## Project Structure
 
 #### packages
 
@@ -19,7 +19,19 @@ _public data class_
 
 The _Parking_ class contains all methods and properties that allow to instantiate a parking and its functionalities.
 
-##### properties
+
+`vehicle.Vehicle`
+
+The `data class Vehicle()` will represent a vehicle and contains the following attributes:
+
+`plate: String,`
+`type: TypeVehicle,`
+`discountCard: String? = null,`
+`checkIn: Calendar = getInstance()`
+
+The `enum class TypeVehicle(val type: String, val tax: Int)` contains the constant values of the four types of vehicles and their specific fixed fees.
+
+#### properties
 
 `public var vehicles: MutableSet<Vehicle>`
 
@@ -55,7 +67,10 @@ Allows to check if the vehicle is in the parking lot.
 
 Get a vehicle by license plate, if the vehicle was found the method will return true.
 
-#### Usage
+`val parkedTime: Long()`
+receives the vehicle's check-in and check-out time in milliseconds and returns, in minutes, the calculation of how long the vehicle was parked
+
+## Usage
 
 First of all you must instantiate the `Parking` class and pass an empty list type `MutableSet<Vehicle>` through its constructor. Look at the example:
 
@@ -109,7 +124,7 @@ Each type of vehicle has a specific fixed rate, as shown in the table below:
 
 After the first 2 hours, there will be a variable rate where you will be charged $5 for every 15 minutes exceeded, regardless of the type of vehicle.
 
-## Developed by:
+## Developed by
 - Lenilson Santiago (lenilson.santiago@mercadolivre.com)
 - Emanuelle Carvalho (emanuelle.carvalho@mercadolivre.com)
 
