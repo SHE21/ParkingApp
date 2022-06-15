@@ -100,7 +100,6 @@ You can obtain the operations report of the parking calling the method `financia
 
 6 `parking.financialReport()`
 
-
 ![AlkeParkingDiagramClass](AlkeParkingDiagramClass.png)
 
 ## Functionalities
