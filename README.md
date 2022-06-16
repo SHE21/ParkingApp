@@ -11,25 +11,13 @@ and has a maximum capacity of up to 20 parked vehicles.
 - util - utility classes and enum classes.
 - vehicle - classes of domain Vehicle. All classes related to domain Vehicles.
 
-#### Classes
+#### Classe
 
 `parking.Parking`
 
 _public data class_
 
 The _Parking_ class contains all methods and properties that allow to instantiate a parking and its functionalities.
-
-
-`vehicle.Vehicle`
-
-The `data class Vehicle()` will represent a vehicle and contains the following attributes:
-
-`plate: String,`
-`type: TypeVehicle,`
-`discountCard: String? = null,`
-`checkIn: Calendar = getInstance()`
-
-The `enum class TypeVehicle(val type: String, val tax: Int)` contains the constant values of the four types of vehicles and their specific fixed fees.
 
 #### properties
 
@@ -67,8 +55,28 @@ Allows to check if the vehicle is in the parking lot.
 
 Get a vehicle by license plate, if the vehicle was found the method will return true.
 
+#### Classe 
+
+`vehicle.Vehicle`
+
+#### properties
+
+The `data class Vehicle()` will represent a vehicle and contains the following attributes:
+
+`plate: String,`
+`type: TypeVehicle,`
+`discountCard: String? = null,`
+`checkIn: Calendar = getInstance()`
+
+#### methods
+
 `val parkedTime: Long()`
+
 receives the vehicle's check-in and check-out time in milliseconds and returns, in minutes, the calculation of how long the vehicle was parked
+
+#### Classe
+
+The `enum class TypeVehicle(val type: String, val tax: Int)` contains the constant values of the four types of vehicles and their specific fixed fees.
 
 ## Usage
 
@@ -100,10 +108,9 @@ You can obtain the operations report of the parking calling the method `financia
 
 6 `parking.financialReport()`
 
-
 ![AlkeParkingDiagramClass](AlkeParkingDiagramClass.png)
 
-## Functionalities
+## Features
 - Add vehicle to the parking lot by entering the license plate number from an Options Menu on the console;
 - Inform discount coupon, if any, to reduce the total fare by 15%;
 - Remove vehicle from the parking lot and inform the total amount of the fee to be paid;
@@ -124,7 +131,7 @@ Each type of vehicle has a specific fixed rate, as shown in the table below:
 
 After the first 2 hours, there will be a variable rate where you will be charged $5 for every 15 minutes exceeded, regardless of the type of vehicle.
 
-## Developed by
+## Developed
 - Lenilson Santiago (lenilson.santiago@mercadolivre.com)
 - Emanuelle Carvalho (emanuelle.carvalho@mercadolivre.com)
 
