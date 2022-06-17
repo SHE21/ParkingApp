@@ -74,9 +74,9 @@ fun createVehicleByPrompt(parking: Parking) {
 
     lineDivisor() // line divisor
 
-    println("Have you got a discount card? If you have, type it. Or not, just type ENTER.")
+    println("Have you got a discount card? If you have, type it. Or not, just type N.")
     var carDiscount: String? = scan.next()
-    if (carDiscount.equals("")) carDiscount = null
+    if (carDiscount.equals("N")) carDiscount = null
 
     lineDivisor() // divisor line
 
