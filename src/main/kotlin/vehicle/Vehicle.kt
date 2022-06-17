@@ -13,17 +13,21 @@ data class Vehicle(
     val parkedTime: Long
         get() = (getInstance().timeInMillis - checkIn.timeInMillis) / MILLISECOND
 
-    //Check if a vehicle is equals to another vehicle
     override fun equals(other: Any?): Boolean {
-        if (other is Vehicle) {
-            return this.plate == other.plate
-        }
-        return super.equals(other)
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Vehicle
+
+        if (plate != other.plate) return false
+
+        return true
     }
 
     override fun hashCode(): Int {
-        var result = plate.hashCode()
-        result = 31 * result + type.hashCode()
-        return result
+        return plate.hashCode()
     }
+
+    //Check if a vehicle is equals to another vehicle
+
 }
